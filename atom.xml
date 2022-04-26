@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>CleanCodeNZ</title>
+  
+  <subtitle>Big Data Analytics and Engineering</subtitle>
+  <link href="https://www.cleancode.co.nz/atom.xml" rel="self"/>
+  
+  <link href="https://www.cleancode.co.nz/"/>
+  <updated>2022-04-26T21:28:59.061Z</updated>
+  <id>https://www.cleancode.co.nz/</id>
+  
+  <author>
+    <name>CleanCodeNZ</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Lakehouse solution in AWS</title>
+    <link href="https://www.cleancode.co.nz/2021/12/07/Lakehouse-solution-in-AWS/"/>
+    <id>https://www.cleancode.co.nz/2021/12/07/Lakehouse-solution-in-AWS/</id>
+    <published>2021-12-06T20:06:38.000Z</published>
+    <updated>2022-04-26T21:28:59.061Z</updated>
+    
+    <content type="html"><![CDATA[<p>My understanding of difference of datalake and lakehouse is lakehouse has a data warehouse component, its main data transformations happen on the data warehouse, while the datalake is purely using object storage, and transformations happen on spark cluster.</p><p>The dbt is a very good tool if the backend is a database or data warehouse, and transformations can be done by SQL statements, dbt supports most of traditional databases, also the data warehouses like redshift, snowflake, for the big data data warehouses like hive and databricks</p><p>The lakehouse stack on AWS:</p><p>Data storage: S3<br>Ingestion: Glue catalog(streaming, jdbc or s3 files) + Glue job<br>Transformation: dbt<br>Datawarehouse: Redshift or Redshift spectrum<br>Data catalog: Glue catalog<br>Job scheduling/Automation: Airflow(using bashoperators or generic aws operators)</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;My understanding of difference of datalake and lakehouse is lakehouse has a data warehouse component, its main data transformations happe</summary>
+      
+    
+    
+    
+    
+    <category term="aws" scheme="https://www.cleancode.co.nz/tags/aws/"/>
+    
+    <category term="airflow" scheme="https://www.cleancode.co.nz/tags/airflow/"/>
+    
+    <category term="glue" scheme="https://www.cleancode.co.nz/tags/glue/"/>
+    
+    <category term="s3" scheme="https://www.cleancode.co.nz/tags/s3/"/>
+    
+    <category term="glue catalog" scheme="https://www.cleancode.co.nz/tags/glue-catalog/"/>
+    
+    <category term="redshift spectrum" scheme="https://www.cleancode.co.nz/tags/redshift-spectrum/"/>
+    
+    <category term="lakehouse" scheme="https://www.cleancode.co.nz/tags/lakehouse/"/>
+    
+    <category term="dbt" scheme="https://www.cleancode.co.nz/tags/dbt/"/>
+    
+    <category term="redshift" scheme="https://www.cleancode.co.nz/tags/redshift/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>A Simple Datalake Solution in AWS</title>
+    <link href="https://www.cleancode.co.nz/2021/12/02/A-Simple-Datalake-Solution-in-AWS/"/>
+    <id>https://www.cleancode.co.nz/2021/12/02/A-Simple-Datalake-Solution-in-AWS/</id>
+    <published>2021-12-01T20:25:32.000Z</published>
+    <updated>2022-04-26T21:28:59.061Z</updated>
+    
+    <content type="html"><![CDATA[<p>Here is a simple datalake stack in aws:</p><p>Data storage: S3<br>Ingestion: Glue catalog(streaming, jdbc or s3 files) + Glue job<br>Transformation: Glue jobs(spark sql)<br>Load: Athena or Redshift or Redshift spectrum<br>Data catalog: Glue catalog<br>Job scheduling/Automation: Airflow(using bashoperators which run aws cli commands)</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Here is a simple datalake stack in aws:&lt;/p&gt;
+&lt;p&gt;Data storage: S3&lt;br&gt;Ingestion: Glue catalog(streaming, jdbc or s3 files) + Glue job&lt;br&gt;Tra</summary>
+      
+    
+    
+    
+    
+    <category term="datalake" scheme="https://www.cleancode.co.nz/tags/datalake/"/>
+    
+    <category term="aws" scheme="https://www.cleancode.co.nz/tags/aws/"/>
+    
+    <category term="airflow" scheme="https://www.cleancode.co.nz/tags/airflow/"/>
+    
+    <category term="glue" scheme="https://www.cleancode.co.nz/tags/glue/"/>
+    
+    <category term="s3" scheme="https://www.cleancode.co.nz/tags/s3/"/>
+    
+    <category term="glue job" scheme="https://www.cleancode.co.nz/tags/glue-job/"/>
+    
+    <category term="glue catalog" scheme="https://www.cleancode.co.nz/tags/glue-catalog/"/>
+    
+    <category term="athena" scheme="https://www.cleancode.co.nz/tags/athena/"/>
+    
+    <category term="redshift spectrum" scheme="https://www.cleancode.co.nz/tags/redshift-spectrum/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Cleancode NZ Gone live</title>
+    <link href="https://www.cleancode.co.nz/2021/11/29/gone-live/"/>
+    <id>https://www.cleancode.co.nz/2021/11/29/gone-live/</id>
+    <published>2021-11-28T20:59:05.000Z</published>
+    <updated>2022-04-26T21:28:59.061Z</updated>
+    
+    <content type="html"><![CDATA[<p>Cleancode NZ web site has gone live on github page.</p><p>The reason it is not using s3 is that s3 static web hosting does not have static ip addresses, you can only use aws Cloudfront to redirect traffic to hosted files, and also to use ssl, you need aws Certificate Manager.</p><p>While current solution is the files are hosted by github page and Cloudflare is used as nameserver and ssl certificate provider, this solution is much simpler than the static pages hosted by s3.</p><p>The idea is from <a href="https://kezunlin.me/post/98df88a8/">Here</a>   </p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Cleancode NZ web site has gone live on github page.&lt;/p&gt;
+&lt;p&gt;The reason it is not using s3 is that s3 static web hosting does not have stat</summary>
+      
+    
+    
+    
+    
+    <category term="new website" scheme="https://www.cleancode.co.nz/tags/new-website/"/>
+    
+    <category term="Cloudflare" scheme="https://www.cleancode.co.nz/tags/Cloudflare/"/>
+    
+    <category term="github page" scheme="https://www.cleancode.co.nz/tags/github-page/"/>
+    
+    <category term="aws s3" scheme="https://www.cleancode.co.nz/tags/aws-s3/"/>
+    
+    <category term="Cloudfront" scheme="https://www.cleancode.co.nz/tags/Cloudfront/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hosted on aws s3</title>
+    <link href="https://www.cleancode.co.nz/2021/10/30/hosted-by-s3/"/>
+    <id>https://www.cleancode.co.nz/2021/10/30/hosted-by-s3/</id>
+    <published>2021-10-29T23:11:35.000Z</published>
+    <updated>2022-04-26T21:28:59.061Z</updated>
+    
+    <content type="html"><![CDATA[<p>The web site has been moved to aws s3.<br>Checkout my main page <a href="/about/me">Home</a>!</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;The web site has been moved to aws s3.&lt;br&gt;Checkout my main page &lt;a href=&quot;/about/me&quot;&gt;Home&lt;/a&gt;!&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+    <category term="new website" scheme="https://www.cleancode.co.nz/tags/new-website/"/>
+    
+    <category term="aws hosting" scheme="https://www.cleancode.co.nz/tags/aws-hosting/"/>
+    
+  </entry>
+  
+</feed>
